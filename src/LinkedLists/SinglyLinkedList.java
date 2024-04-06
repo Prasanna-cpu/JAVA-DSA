@@ -100,6 +100,23 @@ public class SinglyLinkedList {
            prev.next=null;
            return curr;
         }
+
+        public ListNode DeleteNodeAtPosition(int position){
+           if(position==1){
+               head=head.next;
+           }
+           else{
+               ListNode prev=head;
+               int count=1;
+               while(count<position-1){
+                   prev=prev.next;
+                   count++;
+               }
+               ListNode curr=prev.next;
+               prev.next=curr.next;
+               return curr;
+           }
+        }
         public static void main(String[] args) {
             SinglyLinkedList sll=new SinglyLinkedList();
 //            sll.head=new ListNode(10);
